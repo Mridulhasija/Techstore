@@ -1,4 +1,6 @@
 const db = require("../config/db");
+const express = require("express");
+const router = express.Router();
 
 exports.getProducts = (req, res) => {
   db.query("SELECT * FROM products", (err, result) => {
