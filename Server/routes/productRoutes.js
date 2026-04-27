@@ -2,21 +2,28 @@ const db = require("../config/db");
 const express = require("express");
 const router = express.Router();
 
-exports.getProducts = (req, res) => {
+// Route: GET all products
+router.get("/", (req, res) => {
   db.query("SELECT * FROM products", (err, result) => {
-    if (err) throw err;
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
     res.json(result);
   });
-};
+});
 
-exports.getByCategory = (req, res) => {
+// Route: GET by category
+router.get("/:cat", (req, res) => {
   db.query(
     "SELECT * FROM products WHERE category=?",
     [req.params.cat],
     (err, result) => {
-      if (err) throw err;
+      if (err) {
+        return res.status(500).json({ error: err.message });
+      }
       res.json(result);
     }
   );
-};
+});
+
 module.exports = router;
