@@ -19,3 +19,4 @@ exports.getByCategory = (req, res) => {
     }
   );
 };
+module.exports = router;
