@@ -1,4 +1,15 @@
 import API from "../api/api";
+fetch(`${API}/api/cart/add`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    userId: 1,
+    productId: id,
+    quantity: 1
+  })
+});
 
 function ProductCard({ product }) {
 
