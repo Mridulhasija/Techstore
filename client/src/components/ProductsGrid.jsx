@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import API from "../api/api";
 import ProductCard from "./ProductCard";
-import { useEffect, useState } from "react";
 
-function ProductGrid() {
+function ProductsGrid() {
   const [products, setProducts] = useState([]);
 
-  const API = process.env.REACT_APP_API_URL;
+  const API = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     fetch(`${API}/api/products`)
