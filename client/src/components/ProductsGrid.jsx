@@ -1,25 +1,18 @@
-import { useEffect, useState } from "react";
-import API from "../api/api";
 import ProductCard from "./ProductCard";
 
-function ProductsGrid() {
-  const [products, setProducts] = useState([]);
-
-  const API = import.meta.env.VITE_API_URL;
-
-  useEffect(() => {
-    fetch(`${API}/api/products`)
-      .then(res => res.json())
-      .then(data => setProducts(data))
-      .catch(err => console.error(err));
-  }, []);
-
+function ProductsGrid({ products, addToCart }) {
   return (
-    <div className="grid">
-      {products.map(p => (
-        <ProductCard key={p.id} product={p} />
-      ))}
-    </div>
+    <section className="section">
+      <div className="products-grid">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            addToCart={addToCart}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
 
