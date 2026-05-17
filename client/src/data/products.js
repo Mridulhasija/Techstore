@@ -1,1 +1,40 @@
+const products = [
+  {
+    id: 1,
+    brand: "Apple",
+    name: 'MacBook Air M2 13"',
+    price: 99900,
+    oldPrice: 119900,
+    discount: 17,
+    emoji: "💻",
+    rating: 4.9,
+    reviews: 3241,
+    category: "laptops",
+  },
+  {
+    id: 2,
+    brand: "Samsung",
+    name: "Galaxy S24 Ultra 5G",
+    price: 129999,
+    oldPrice: 149999,
+    discount: 13,
+    emoji: "📱",
+    rating: 4.8,
+    reviews: 1832,
+    category: "phones",
+  },
+  {
+    id: 3,
+    brand: "Sony",
+    name: "WF-1000XM5 Earbuds",
+    price: 19990,
+    oldPrice: 26990,
+    discount: 26,
+    emoji: "🎧",
+    rating: 4.7,
+    reviews: 892,
+    category: "audio",
+  },
+];
 
+export default products;
