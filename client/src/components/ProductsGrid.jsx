@@ -1,23 +1,31 @@
-import { useEffect, useState } from "react";
-import API from "../api/api";
+import { useToast } from "../hooks/useToast";
+import ProductCard from "./ProductCard";
 
-function ProductsGrid() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    API.get("/api/products")
-      .then((res) => setProducts(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+function ProductsGrid({ products, addToCart }) {
+  const showToast = useToast();
 
   return (
-    <div className="products-grid">
-      {products.map((product) => (
-        <div key={product.id}>
-          {product.name}
-        </div>
-      ))}
-    </div>
+    <section className="section" style={{ paddingTop: 0 }}>
+      <div className="section-header">
+        <div className="section-title">Featured Products</div>
+        <a
+          className="see-all"
+          onClick={() => showToast("Loading full product listing...")}
+        >
+          View All →
+        </a>
+      </div>
+
+      <div className="products-grid">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            addToCart={addToCart}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
 
