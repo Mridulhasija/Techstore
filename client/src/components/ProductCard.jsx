@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { useToast } from "../hooks/useToast";
+import { useState }      from "react";
+import { useNavigate }   from "react-router-dom";
+import { useToast }      from "../hooks/useToast";
 
 function Stars({ rating }) {
   const full  = Math.floor(rating);
@@ -13,7 +14,8 @@ function Stars({ rating }) {
 
 function ProductCard({ product, addToCart }) {
   const [added, setAdded] = useState(false);
-  const showToast = useToast();
+  const showToast  = useToast();
+  const navigate   = useNavigate();
 
   const handleAdd = (e) => {
     e.stopPropagation();
@@ -24,7 +26,7 @@ function ProductCard({ product, addToCart }) {
   };
 
   return (
-    <div className="product-card" onClick={() => showToast(`Opening ${product.name}...`)}>
+    <div className="product-card" onClick={() => navigate(`/product/${product.id}`)}>
       <div className="product-img">
         <span>{product.emoji}</span>
         <span className="discount-tag">-{product.discount}%</span>
@@ -38,14 +40,14 @@ function ProductCard({ product, addToCart }) {
         <div className="product-rating">
           <Stars rating={product.rating} />
           <span className="review-count">
-            {product.rating} ({product.reviews.toLocaleString()})
+            {product.rating} ({product.reviews?.toLocaleString()})
           </span>
         </div>
 
         <div className="product-footer">
           <div>
-            <span className="old-price">₹{product.oldPrice.toLocaleString()}</span>
-            <span className="price">₹{product.price.toLocaleString()}</span>
+            <span className="old-price">₹{product.oldPrice?.toLocaleString()}</span>
+            <span className="price">₹{product.price?.toLocaleString()}</span>
           </div>
           <button
             className={`add-btn${added ? " added" : ""}`}
