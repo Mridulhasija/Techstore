@@ -1,16 +1,26 @@
+import { Link } from "react-router-dom";
+import { useAuth }  from "../context/AuthContext";
 import { useToast } from "../hooks/useToast";
 
-function Navbar({ cartCount }) {
+function Navbar({ cartCount, onAuthClick }) {
+  const { user, logout } = useAuth();
   const showToast = useToast();
+
+  const handleLogout = () => {
+    logout();
+    showToast("Signed out successfully");
+  };
 
   return (
     <nav>
-      <div className="logo">tech<span>store</span></div>
+      <Link to="/" className="logo" style={{ textDecoration: "none" }}>
+        tech<span>store</span>
+      </Link>
 
       <ul className="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Deals</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/products">Products</Link></li>
+        <li><Link to="/deals">Deals</Link></li>
         <li><a href="#">About</a></li>
       </ul>
 
@@ -25,9 +35,14 @@ function Navbar({ cartCount }) {
           <span className="cart-badge">{cartCount}</span>
         </button>
 
-        <button className="btn-login" onClick={() => showToast("Login modal would open here")}>
-          Sign In
-        </button>
+        {user ? (
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <span style={{ fontSize: 13, color: "#a8a2ff" }}>Hi, {user.name.split(" ")[0]}</span>
+            <button className="btn-login" onClick={handleLogout}>Sign Out</button>
+          </div>
+        ) : (
+          <button className="btn-login" onClick={onAuthClick}>Sign In</button>
+        )}
       </div>
     </nav>
   );
