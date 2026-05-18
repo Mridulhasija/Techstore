@@ -1,12 +1,12 @@
-const express = require("express");
-const router = express.Router();
+const express                     = require("express");
+const router                      = express.Router();
+const { verifyToken }             = require("../Controllers/authController");
+const { addToCart, getCart, removeFromCart } = require("../Controllers/cartController");
 
-const {
-  addToCart,
-  getCart
-} = require("../Controllers/cartController");
+router.use(verifyToken);            
 
-router.post("/add", addToCart);
-router.get("/:userId", getCart);
+router.get("/",                getCart);
+router.post("/add",            addToCart);
+router.delete("/:cartItemId",  removeFromCart);
 
 module.exports = router;
