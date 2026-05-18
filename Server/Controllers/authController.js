@@ -13,7 +13,7 @@ exports.register = (req, res) => {
     if (err)  return res.status(500).json({ error: err.message });
     if (rows.length) return res.status(409).json({ error: "Email already registered" });
 
-    const hash = bcrypt.hashasync(password, 10);
+   const hashedPassword = await bcrypt.hash(password, 10);
     db.query(
       "INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
       [name, email, hash],
