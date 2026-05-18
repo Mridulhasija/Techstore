@@ -1,9 +1,11 @@
+import { useToast } from "../hooks/useToast";
+
 function Navbar({ cartCount }) {
+  const showToast = useToast();
+
   return (
     <nav>
-      <div className="logo">
-        tech<span>store</span>
-      </div>
+      <div className="logo">tech<span>store</span></div>
 
       <ul className="nav-links">
         <li><a href="#">Home</a></li>
@@ -15,18 +17,17 @@ function Navbar({ cartCount }) {
       <div className="nav-right">
         <div className="search-bar">
           <span className="search-icon">⌕</span>
-          <input
-            type="text"
-            placeholder="Search laptops, phones..."
-          />
+          <input type="text" placeholder="Search laptops, phones..." />
         </div>
 
-        <button className="cart-btn">
+        <button className="cart-btn" onClick={() => showToast("Cart opened!")}>
           🛒 Cart
           <span className="cart-badge">{cartCount}</span>
         </button>
 
-        <button className="btn-login">Sign In</button>
+        <button className="btn-login" onClick={() => showToast("Login modal would open here")}>
+          Sign In
+        </button>
       </div>
     </nav>
   );
