@@ -13,7 +13,7 @@ exports.register = (req, res) => {
     if (err)  return res.status(500).json({ error: err.message });
     if (rows.length) return res.status(409).json({ error: "Email already registered" });
 
-    const hash = bcrypt.hashSync(password, 10);
+    const hash = bcrypt.hashasync(password, 10);
     db.query(
       "INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
       [name, email, hash],
@@ -36,7 +36,7 @@ exports.login = (req, res) => {
     if (!rows.length) return res.status(401).json({ error: "Invalid credentials" });
 
     const user = rows[0];
-    if (!bcrypt.compareSync(password, user.password))
+    if (!bcrypt.compareasync(password, user.password))
       return res.status(401).json({ error: "Invalid credentials" });
 
     const token = jwt.sign(
