@@ -45,17 +45,17 @@ exports.register = async (req, res) => {
               });
             }
 
-            const token = jwt.sign(
-              {
-                id: result.insertId,
-                name,
-                email,
-              },
-              SECRET,
-              {
-                expiresIn: "7d",
-              }
-            );
+           const token = jwt.sign(
+     {
+     id: user.id,
+    email: user.email,
+},
+process.env.JWT_SECRET,
+{
+expiresIn: "7d",
+}
+);
+
 
             res.status(201).json({
               token,
