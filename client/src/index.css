@@ -833,3 +833,25 @@ button { font-family: 'Inter', sans-serif; cursor: pointer; }
 }
 .toast.show { display: flex; align-items: center; gap: 8px; animation: toastIn 0.3s ease; }
 @keyframes toastIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+.loading-container {
+min-height: 70vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 18px;
+}
+.loader {
+width: 50px;
+height: 50px;
+border: 5px solid #ddd;
+border-top-color: #2563eb;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+}
+@keyframes spin {
+to {
+transform: rotate(360deg);
+}
+}
