@@ -6,7 +6,7 @@ function Footer() {
         <a href="#">Privacy</a>
         <a href="#">Terms</a>
         <a href="#">Support</a>
-        <a href="https://github.com/Techstore-main" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/Mridulhasija/Techstore" target="_blank" rel="noreferrer">GitHub</a>
       </div>
     </footer>
   );
