@@ -1,24 +1,29 @@
-const mysql = require("mysql2");
+const express = require("express");
+const cors = require("cors");
 require("dotenv").config();
-const pool = mysql.createPool({
-host: process.env.DB_HOST,
-user: process.env.DB_USER,
-password: process.env.DB_PASSWORD,
-database: process.env.DB_NAME,
-port: process.env.DB_PORT,
-waitForConnections: true,
-connectionLimit: 10,
-queueLimit: 0,
-ssl: {
-rejectUnauthorized: false,
-},
+
+const app = express();
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://your-frontend.vercel.app"
+  ],
+  credentials: true,
+}));
+
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("TechStore API Running");
 });
-pool.getConnection((err, connection) => {
-if (err) {
-console.log("DB ERROR:", err);
-} else {
-console.log("Railway MySQL Connected");
-connection.release();
-}
+
+app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/products", require("./routes/productRoutes"));
+app.use("/api/cart", require("./routes/cartRoutes"));
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
-module.exports = pool.promise();
