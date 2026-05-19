@@ -163,7 +163,7 @@ button { font-family: 'Inter', sans-serif; cursor: pointer; }
   border: 1px solid var(--brand-border);
   border-radius: var(--radius-sm);
   padding: 7px 14px;
-  color: #b0a8ff;
+  color: #ffffff;
   font-size: 13px;
   font-weight: 500;
   transition: var(--transition);
