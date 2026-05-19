@@ -48,7 +48,7 @@ const token = jwt.sign(
 {
  id: result.insertId,
  email,
-}
+},
      
             res.status(201).json({
               token,
