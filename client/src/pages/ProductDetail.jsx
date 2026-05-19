@@ -40,7 +40,7 @@ function ProductDetail({ addToCartLocal }) {
       try {
         await addToCartAPI(product.id, 1);
       } catch {
-        // silently ignore if backend offline
+      
       }
     }
 
@@ -48,12 +48,14 @@ function ProductDetail({ addToCartLocal }) {
     setTimeout(() => setAdded(false), 2000);
   };
 
-  if (loading) return (
-    <div className="detail-loading">
-      <div className="detail-spinner" />
-      Loading product…
-    </div>
-  );
+ if (loading) {
+return (
+<div className="loading-container">
+<div className="loader"></div>
+<p>Loading Product...</p>
+</div>
+);
+}
 
   if (!product) return (
     <div className="detail-loading">
