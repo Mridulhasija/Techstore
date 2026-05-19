@@ -49,6 +49,9 @@ const token = jwt.sign(
  id: result.insertId,
  email,
 },
+   SECRET,
+       { expiresIn: "7d" }
+            );
      
             res.status(201).json({
               token,
