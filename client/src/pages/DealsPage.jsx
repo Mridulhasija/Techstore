@@ -29,7 +29,7 @@ function DealsPage({ cartCount, addToCart, onAuthClick }) {
       <Navbar cartCount={cartCount} onAuthClick={onAuthClick} />
 
       <div className="products-page">
-        {/* Banner */}
+        {}
         <div className="promo-banner" style={{ margin: "0 0 40px" }}>
           <div className="promo-text">
             <h2>Flash Sale — Up to 40% Off</h2>
@@ -42,7 +42,7 @@ function DealsPage({ cartCount, addToCart, onAuthClick }) {
           </div>
         </div>
 
-        {/* Hot Deals */}
+        {}
         {hotDeals.length > 0 && (
           <>
             <div className="section-header">
@@ -56,7 +56,7 @@ function DealsPage({ cartCount, addToCart, onAuthClick }) {
           </>
         )}
 
-        {/* Other Deals */}
+        {}
         {otherDeals.length > 0 && (
           <>
             <div className="section-header">
@@ -70,6 +70,11 @@ function DealsPage({ cartCount, addToCart, onAuthClick }) {
           </>
         )}
       </div>
+      <Link to="/products">
+<button className="btn-primary">
+View Deals
+</button>
+</Link>
 
       <Footer />
     </>
