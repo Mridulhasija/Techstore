@@ -46,6 +46,7 @@ function AppInner() {
         <Route path="/product/:id" element={
           <ProductDetail addToCartLocal={addToCart} />
         } />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
     </>
   );
