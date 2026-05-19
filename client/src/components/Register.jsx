@@ -34,4 +34,35 @@ const Register = ({ onClose }) => {
 
       window.location.reload();
     } catch (err) {
+      setError(
+        err.response?.data?.error ||
+          "Something went wrong"
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="auth-container">
+      <h2>Create Account</h2>
+      <p className="auth-subtitle">
+        Join TechStore today
+      </p>
+
+      <form onSubmit={handleRegister}>
+        <input
+          type="text"
+          placeholder="Enter name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+
+        <input
+          type="email"
+          placeholder="Enter email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
 export default Register;
