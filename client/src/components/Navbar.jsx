@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import AuthModal from "./AuthModal";
 import Login from "./Login";
 import Register from "./Register";
-import "./Navbar.css";
 
 const Navbar = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -19,7 +18,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar">
+<nav className="navbar">
         <Link to="/" className="logo">
           TechStore
         </Link>
@@ -35,7 +34,7 @@ const Navbar = () => {
             <>
               <span className="user-name">
                 Hi, {user.name}
-              </span>
+</span>
 
               <button onClick={logout}>Logout</button>
             </>
@@ -57,6 +56,20 @@ const Navbar = () => {
       </nav>
 
       <AuthModal
-        isOpen={showLogin}
+isOpen={showLogin}
         onClose={() => setShowLogin(false)}
+      >
+        <Login onClose={() => setShowLogin(false)} />
+      </AuthModal>
+
+      <AuthModal
+        isOpen={showRegister}
+        onClose={() => setShowRegister(false)}
+      >
+        <Register onClose={() => setShowRegister(false)} />
+      </AuthModal>
+    </>
+  );
+};
+
 export default Navbar;
