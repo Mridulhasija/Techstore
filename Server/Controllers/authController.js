@@ -44,19 +44,12 @@ exports.register = async (req, res) => {
                 error: err2.message,
               });
             }
-
-           const token = jwt.sign(
-     {
-     id: user.id,
-    email: user.email,
-},
-process.env.JWT_SECRET,
+const token = jwt.sign(
 {
-expiresIn: "7d",
+ id: result.insertId,
+ email,
 }
-);
-
-
+     
             res.status(201).json({
               token,
               user: {
