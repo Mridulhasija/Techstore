@@ -1,4 +1,20 @@
 import React, { useState } from "react";
+import axios from "axios";
+import "./Auth.css";
+
+const Login = ({ onClose }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+      setError("");
+
       const res = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/auth/login`,
         {
@@ -39,24 +55,4 @@ import React, { useState } from "react";
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-        />
-
-        <input
-          type="password"
-          placeholder="Enter password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-
-        {error && <p className="error-msg">{error}</p>}
-
-        <button type="submit" disabled={loading}>
-          {loading ? "Logging in..." : "Login"}
-        </button>
-      </form>
-    </div>
-  );
-};
-
 export default Login;
