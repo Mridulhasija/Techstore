@@ -7,7 +7,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://your-frontend.vercel.app"
+    "https://techstore-f.onrender.com"
   ],
   credentials: true,
 }));
@@ -15,7 +15,7 @@ app.use(cors({
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("TechStore API Running");
+  res.send("TechStore API is Running 🚀");
 });
 
 app.use("/api/auth", require("./routes/authRoutes"));
