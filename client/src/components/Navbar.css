@@ -9,6 +9,9 @@ border-bottom: 1px solid #e5e7eb;
 position: sticky;
 top: 0;
 z-index: 1000;
+border: 1px solid rgba(255,255,255,0.08);
+background: rgba(10,10,20,0.78);
+backdrop-filter: blur(16px);
 }
 .logo-wrap {
 display: flex;
@@ -33,19 +36,109 @@ font-size: 26px;
 font-weight: 700;
 color: #111827;
 }
+.logo,
+.logo a,
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+
+  color: #f5f3ff;
+
+  letter-spacing: -0.5px;
+
+  text-decoration: none;
+
+  text-shadow:
+    0 0 12px rgba(124,111,255,0.35),
+    0 0 24px rgba(124,111,255,0.12);
+
+  transition: all 0.3s ease;
+}
+
+.logo:hover,
+.logo a:hover,
+.navbar-logo:hover {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 16px rgba(124,111,255,0.7),
+    0 0 30px rgba(124,111,255,0.22);
+}
 .nav-links {
-display: flex;
-align-items: center;
-gap: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
 .nav-links a {
-text-decoration: none;
-color: #111827;
-font-weight: 600;
-transition: 0.3s;
+  position: relative;
+
+  padding: 9px 18px;
+  border-radius: 14px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #ddd8ff;
+  transition: all 0.28s ease;
+  overflow: hidden;
+  z-index: 1;
+  text-shadow:
+    0 0 10px rgba(124,111,255,0.18);
 }
-.nav-links a:hover {
-color: #2563eb;
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(124,111,255,0.16),
+    rgba(124,111,255,0.05)
+  );
+  opacity: 0.6;
+  transform: scale(0.95);
+  transition: all 0.28s ease;
+  z-index: -1;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  bottom: 4px;
+  width: 64%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #7c6fff,
+    #c9c2ff
+  );
+
+  transform: scaleX(0);
+  transition: transform 0.28s ease;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+  transform: translateY(-2px);
+  text-shadow:
+    0 0 12px rgba(124,111,255,0.65),
+    0 0 24px rgba(124,111,255,0.22);
+}
+.nav-links a:hover::before,
+.nav-links a.active::before {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow:
+    0 0 18px rgba(124,111,255,0.14),
+    inset 0 0 16px rgba(124,111,255,0.08);
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
 }
 .nav-auth {
 display: flex;
@@ -77,8 +170,4 @@ flex-direction: column;
 gap: 20px;
 padding: 20px;
 }
-.nav-links {
-flex-wrap: wrap;
-justify-content: center;
-}
-}
+
