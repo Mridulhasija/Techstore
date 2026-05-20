@@ -98,7 +98,8 @@ font-weight: 600;
 transition: 0.3s ease;
 }
 .remove-btn:hover{
-  transform: translateY(-2px);
+  transform: scale(1.1);
+  background-color: #ff8566;
 }
 .cart-summary {
 background: white;
@@ -139,7 +140,8 @@ cursor: pointer;
 transition: 0..3s ease;
 }
 .checkout-btn:hover{
-  transform: translateY(-2px);
+  transform: scale(1.1);
+  background-color: #809fff; 
 }
 .empty-cart-container {
 background: white;
