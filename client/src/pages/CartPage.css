@@ -179,3 +179,7 @@ font-size: 72px;
 background: linear-gradient(135deg,#111827,#1e293b);
 border-radius: 20px;
 }
+.empty-cart-icon {
+font-size: 120px;
+margin-bottom: 20px;
+}
