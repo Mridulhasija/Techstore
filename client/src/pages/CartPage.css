@@ -81,6 +81,10 @@ background: #2563eb;
 color: white;
 font-size: 18px;
 cursor: pointer;
+transition: 0.3s ease;
+}
+.quantity-controls button:hover{
+ transform: scale(0.5); 
 }
 .subtotal {
 margin-bottom: 18px;
@@ -98,8 +102,8 @@ font-weight: 600;
 transition: 0.3s ease;
 }
 .remove-btn:hover{
-  transform: scale(1.1);
-  background-color: #d3d3d3;
+  transform: scale(0.8);
+  background-color: #ff471a;
 }
 .cart-summary {
 background: white;
