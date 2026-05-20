@@ -92,7 +92,7 @@ padding: 12px 18px;
 border-radius: 12px;
 cursor: pointer;
 font-weight: 600;
-transition: smooth;
+transition: 0.3s ease;
 }
 .remove-btn:hover{
   transform: translateY(-2px);
@@ -131,7 +131,7 @@ color: white;
 font-size: 16px;
 font-weight: 700;
 cursor: pointer;
-transition: smooth;
+transition: 0..3s ease;
 }
 .checkout-btn:hover{
   transform: translateY(-2px);
