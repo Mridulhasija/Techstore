@@ -1,9 +1,9 @@
 import { createContext, useContext, useEffect, useState } from "react";
-
+import { useToast } from "../hooks/useToast";
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-
+const showToast = useToast();
   const [cartItems, setCartItems] = useState(() => {
     const storedCart = localStorage.getItem("cartItems");
 
@@ -18,7 +18,7 @@ export const CartProvider = ({ children }) => {
   }, [cartItems]);
 
   const addToCart = (product) => {
-
+   showToast(`${product.name} added to cart!`);
     const existingItem = cartItems.find(
       (item) => item.id === product.id
     );
@@ -49,7 +49,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeFromCart = (id) => {
-
+   showToast("Item removed from cart");
     setCartItems(
       cartItems.filter((item) => item.id !== id)
     );
