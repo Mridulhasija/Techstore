@@ -71,16 +71,10 @@ const CartPage = () => {
                       key={item.id}
                     >
 
-                      {/* Product Image */}
-                      <div className="cart-image-container">
+                     <div className="cart-product-emoji">
+                  {item.emoji}
+                 </div>
 
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="cart-image"
-                        />
-
-                      </div>
 
                       {/* Product Details */}
                       <div className="cart-details">
