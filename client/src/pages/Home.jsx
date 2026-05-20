@@ -9,7 +9,7 @@ import localProducts from "../data/products";
 import { getProducts, addToCartAPI } from "../api/api";
 import { useAuth }   from "../context/AuthContext";
 
-function Home({ cartCount, setCartCount, onAuthClick }) {
+function Home() {
   const [filteredProducts, setFilteredProducts] = useState(localProducts);
   const [allProducts,      setAllProducts]      = useState(localProducts);
   const [apiLoaded,        setApiLoaded]        = useState(false);
