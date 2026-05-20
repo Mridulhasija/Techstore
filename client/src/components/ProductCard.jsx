@@ -1,23 +1,27 @@
+import "./ProductCard.css";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
-import "./ProductCard.css";
 
 const ProductCard = ({ product }) => {
 
   const { addToCart } = useCart();
 
   return (
+
     <div className="product-card">
 
-      <div className="product-emoji">
-{product.emoji}
-</div>
+      {/* Discount Badge */}
+      <div className="discount-badge">
+        {product.discount}% OFF
+      </div>
 
-        {product.discount && (
-          <span className="discount-badge">
-            {product.discount}% OFF
-          </span>
-        )}
+      {/* Product Emoji */}
+      <div className="product-image-container">
+
+        <div className="product-emoji">
+          {product.emoji}
+        </div>
+
       </div>
 
       {/* Product Info */}
@@ -37,19 +41,16 @@ const ProductCard = ({ product }) => {
             ₹{product.price}
           </span>
 
-          {product.oldPrice && (
-            <span className="old-price">
-              ₹{product.oldPrice}
-            </span>
-          )}
+          <span className="old-price">
+            ₹{product.oldPrice}
+          </span>
+
         </div>
 
-        {/* Rating */}
         <div className="product-rating">
-          ⭐ {product.rating || 4.5}
+          ⭐ {product.rating}
         </div>
 
-        {/* Buttons */}
         <div className="product-buttons">
 
           <button
@@ -66,8 +67,11 @@ const ProductCard = ({ product }) => {
           </Link>
 
         </div>
+
       </div>
+
     </div>
+
   );
 };
 
