@@ -54,6 +54,7 @@ flex: 1;
 .cart-details h2 {
 font-size: 22px;
 margin-bottom: 10px;
+color: #0f172a;
 }
 .cart-category {
 color: #64748b;
@@ -83,6 +84,7 @@ cursor: pointer;
 .subtotal {
 margin-bottom: 18px;
 font-size: 16px;
+color: #0f172a;
 }
 .remove-btn {
 background: #ef4444;
@@ -108,12 +110,14 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.06);
 }
 .cart-summary h2 {
 margin-bottom: 24px;
+color: #0f172a;
 }
 .summary-row,
 .summary-total {
 display: flex;
 justify-content: space-between;
 margin-bottom: 18px;
+color: #0f172a;
 }
 .summary-total {
 font-size: 22px;
