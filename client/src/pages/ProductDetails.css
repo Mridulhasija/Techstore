@@ -83,3 +83,18 @@ height: 280px;
 font-size: 120px;
 }
 }
+.detail-cart-btn {
+background: linear-gradient(135deg,#8b5cf6,#6366f1);
+border: none;
+color: white;
+padding: 16px 28px;
+border-radius: 16px;
+font-size: 16px;
+font-weight: 700;
+cursor: pointer;
+transition: 0.3s ease;
+}
+.detail-cart-btn:hover {
+transform: translateY(-3px);
+box-shadow: 0 12px 24px rgba(99,102,241,0.35);
+}
