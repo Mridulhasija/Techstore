@@ -16,7 +16,7 @@ const SORTS = [
   { label: "Discount",    value: "discount" },
 ];
 
-function ProductsPage({ cartCount, addToCart, onAuthClick }) {
+function ProductsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const initCat = searchParams.get("cat") || "all";
 
