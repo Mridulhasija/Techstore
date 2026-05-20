@@ -9,13 +9,9 @@ const ProductCard = ({ product }) => {
   return (
     <div className="product-card">
 
-      {/* Product Image */}
-      <div className="product-image-container">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="product-image"
-        />
+      <div className="product-emoji">
+{product.emoji}
+</div>
 
         {product.discount && (
           <span className="discount-badge">
