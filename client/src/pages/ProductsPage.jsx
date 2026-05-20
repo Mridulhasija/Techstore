@@ -53,7 +53,7 @@ function ProductsPage() {
 
   return (
     <>
-      <Navbar cartCount={cartCount} onAuthClick={onAuthClick} />
+      <Navbar/>
 
       <div className="products-page">
         <div className="products-page-header">
