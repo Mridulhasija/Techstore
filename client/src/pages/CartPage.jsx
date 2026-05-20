@@ -41,11 +41,9 @@ const CartPage = () => {
 
             <div className="empty-cart-container">
 
-              <img
-                src="/images/empty-cart.png"
-                alt="Empty Cart"
-                className="empty-cart-image"
-              />
+              <div className="empty-cart-icon">
+                🛒
+              </div>
 
               <h2>Your Cart is Empty</h2>
 
