@@ -1,64 +1,79 @@
-import { useState }      from "react";
-import { useNavigate }   from "react-router-dom";
-import { useToast }      from "../hooks/useToast";
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
-function Stars({ rating }) {
-  const full  = Math.floor(rating);
-  const empty = 5 - full;
-  return (
-    <span className="stars">
-      {"★".repeat(full)}{"☆".repeat(empty)}
-    </span>
-  );
-}
+import "./ProductCard.css";
 
-function ProductCard({ product, addToCart }) {
-  const [added, setAdded] = useState(false);
-  const showToast  = useToast();
-  const navigate   = useNavigate();
+const ProductCard = ({ product }) => {
 
-  const handleAdd = (e) => {
-    e.stopPropagation();
-    addToCart(product.id);
-    setAdded(true);
-    showToast("Item added to cart!");
-    setTimeout(() => setAdded(false), 2000);
-  };
+  const { addToCart } = useCart();
 
   return (
-    <div className="product-card" onClick={() => navigate(`/product/${product.id}`)}>
-      <div className="product-img">
-        <span>{product.emoji}</span>
-        <span className="discount-tag">-{product.discount}%</span>
-        <div className="product-wishlist">♡</div>
+    <div className="product-card">
+
+      {/* Product Image */}
+      <div className="product-image-container">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="product-image"
+        />
+
+        {product.discount && (
+          <span className="discount-badge">
+            {product.discount}% OFF
+          </span>
+        )}
       </div>
 
-      <div className="product-body">
-        <div className="product-brand">{product.brand}</div>
-        <div className="product-name">{product.name}</div>
+      {/* Product Info */}
+      <div className="product-info">
 
-        <div className="product-rating">
-          <Stars rating={product.rating} />
-          <span className="review-count">
-            {product.rating} ({product.reviews?.toLocaleString()})
+        <h3 className="product-title">
+          {product.name}
+        </h3>
+
+        <p className="product-category">
+          {product.category}
+        </p>
+
+        <div className="product-price-section">
+
+          <span className="product-price">
+            ₹{product.price}
           </span>
+
+          {product.oldPrice && (
+            <span className="old-price">
+              ₹{product.oldPrice}
+            </span>
+          )}
         </div>
 
-        <div className="product-footer">
-          <div>
-            <span className="old-price">₹{product.oldPrice?.toLocaleString()}</span>
-            <span className="price">₹{product.price?.toLocaleString()}</span>
-          </div>
+        {/* Rating */}
+        <div className="product-rating">
+          ⭐ {product.rating || 4.5}
+        </div>
+
+        {/* Buttons */}
+        <div className="product-buttons">
+
           <button
-            className={`add-btn${added ? " added" : ""}`}
-            onClick={handleAdd}
+            className="add-cart-btn"
+            onClick={() => addToCart(product)}
           >
-            {added ? "✓ Added" : "Add +"}
+            Add To Cart
           </button>
+
+          <Link to={`/products/${product.id}`}>
+            <button className="view-btn">
+              View
+            </button>
+          </Link>
+
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default ProductCard;
