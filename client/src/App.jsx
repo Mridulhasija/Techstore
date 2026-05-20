@@ -11,11 +11,6 @@ import CartPage                  from "./pages/CartPage";
 import ProductDetailsPage        from "./pages/ProductDetailsPage";
 
 function AppInner() {
-  const [cartCount,   setCartCount]   = useState(3);
-  const [showAuth,    setShowAuth]    = useState(false);
-
-  const addToCart = (productId) => setCartCount((n) => n + 1);
-
   return (
     <>
       {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
