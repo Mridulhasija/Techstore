@@ -46,8 +46,8 @@ const Footer = () => {
           <h3>Follow Us</h3>
 
           <div className="social-icons">
-            <a href="#https://github.com/Mridulhasija"><FaGithub /></a>
-            <a href="#https://www.linkedin.com/in/mridul-hasija-290996329/"><FaLinkedin /></a>
+            <a href="#https://github.com/Mridulhasija" target="_blank" ><FaGithub /></a>
+            <a href="#https://www.linkedin.com/in/mridul-hasija-290996329/" target="_blank" ><FaLinkedin /></a>
             <a href="#"><FaInstagram /></a>
             <a href="#"><FaTwitter /></a>
           </div>
