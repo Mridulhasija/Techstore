@@ -2,9 +2,7 @@ import Navbar from "../components/Navbar";
 import PromoBanner from "../components/PromoBanner";
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/Footer";
-
 import products from "../data/products";
-
 import "./DealsPage.css";
 
 function DealsPage() {
@@ -23,7 +21,7 @@ function DealsPage() {
 
           <PromoBanner />
 
-          {/* Products Grid */}
+          {/* Deals Products */}
 
           <div className="deals-products-grid">
 
