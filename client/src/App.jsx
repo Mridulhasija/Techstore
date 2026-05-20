@@ -8,6 +8,7 @@ import DealsPage                 from "./pages/DealsPage";
 import ProductDetail             from "./pages/ProductDetail";
 import AuthModal                 from "./components/AuthModal";
 import CartPage                  from "./pages/CartPage";
+import ProductDetailsPage        from "./pages/ProductDetailsPage";
 
 function AppInner() {
   const [cartCount,   setCartCount]   = useState(3);
