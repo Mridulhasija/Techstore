@@ -26,10 +26,10 @@ const Footer = () => {
           <h3>Quick Links</h3>
 
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/products">Products</Link></li>
-            <li><Link to="/deals">Deals</Link></li>
-            <li><Link to="/cart">Cart</Link></li>
+            <li><a to="/">Home</a></li>
+            <li><a to="/products">Products</a></li>
+            <li><a to="/deals">Deals</a></li>
+            <li><a to="/cart">Cart</a></li>
           </ul>
         </div>
 
@@ -46,8 +46,8 @@ const Footer = () => {
           <h3>Follow Us</h3>
 
           <div className="social-icons">
-            <a href="#https://github.com/Mridulhasija" target="_blank" ><FaGithub /></a>
-            <a href="#https://www.linkedin.com/in/mridul-hasija-290996329/" target="_blank" ><FaLinkedin /></a>
+            <a href="https://github.com/Mridulhasija" target="_blank"  rel="noopener noreferrer" ><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/mridul-hasija-290996329/" target="_blank"  rel="noopener noreferrer" ><FaLinkedin /></a>
             <a href="#"><FaInstagram /></a>
             <a href="#"><FaTwitter /></a>
           </div>
