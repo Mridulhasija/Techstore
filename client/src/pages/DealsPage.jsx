@@ -7,7 +7,7 @@ import { useCountdown } from "../hooks/useCountdown";
 import { getProducts }  from "../api/api";
 import localProducts    from "../data/products";
 
-function DealsPage({ cartCount, addToCart, onAuthClick }) {
+function DealsPage() {
   const [products, setProducts] = useState(
     [...localProducts].sort((a, b) => b.discount - a.discount)
   );
@@ -27,7 +27,7 @@ function DealsPage({ cartCount, addToCart, onAuthClick }) {
 
   return (
     <>
-      <Navbar cartCount={cartCount} onAuthClick={onAuthClick} />
+      <Navbar />
 
       <div className="products-page">
         <div className="promo-banner" style={{ margin: "0 0 40px" }}>
