@@ -233,8 +233,8 @@ transform: scaleX(1);
 }
 
 .btn-sign-in:hover {
-  transform: translateY(-2px) scale(1.02);
-  background: linear-gradient(
+  transform: scale(1.02);
+  background-color: linear-gradient(
     135deg,
     #8b7cff,
     #b2a7ff
