@@ -1,122 +1,122 @@
-import { useState, useEffect } from "react";
-import { useSearchParams }     from "react-router-dom";
-import ProductCard             from "../components/ProductCard";
-import Navbar                  from "../components/Navbar";
-import Footer                  from "../components/Footer";
-import { getProducts }         from "../api/api";
-import localProducts           from "../data/products";
-import { useToast }            from "../hooks/useToast";
-
-const CATEGORIES = ["all","laptops","phones","audio","gaming","tablets","wearables"];
-const SORTS = [
-  { label: "Relevance",   value: "default" },
-  { label: "Price: Low",  value: "price_asc" },
-  { label: "Price: High", value: "price_desc" },
-  { label: "Rating",      value: "rating" },
-  { label: "Discount",    value: "discount" },
-];
+import { useState } from "react";
+import Navbar from "../components/Navbar";
+import ProductCard from "../components/ProductCard";
+import Footer from "../components/Footer";
+import products from "../data/products";
+import "./ProductsPage.css";
 
 function ProductsPage() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const initCat = searchParams.get("cat") || "all";
+  const [selectedCategory, setSelectedCategory] =
+    useState("all");
 
-  const [products,   setProducts]   = useState(localProducts);
-  const [activeCat,  setActiveCat]  = useState(initCat);
-  const [sort,       setSort]       = useState("default");
-  const [search,     setSearch]     = useState("");
-  const showToast = useToast();
-
-  useEffect(() => {
-    getProducts()
-      .then(({ data }) => { if (data?.length) setProducts(data); })
-      .catch(() => {});
-  }, []);
-
-  const filtered = products
-    .filter((p) => activeCat === "all" || p.category === activeCat)
-    .filter((p) => search === "" ||
-      p.name.toLowerCase().includes(search.toLowerCase()) ||
-      p.brand.toLowerCase().includes(search.toLowerCase())
-    )
-    .sort((a, b) => {
-      if (sort === "price_asc")  return a.price - b.price;
-      if (sort === "price_desc") return b.price - a.price;
-      if (sort === "rating")     return b.rating - a.rating;
-      if (sort === "discount")   return b.discount - a.discount;
-      return 0;
-    });
-
-  const selectCat = (cat) => {
-    setActiveCat(cat);
-    setSearchParams(cat === "all" ? {} : { cat });
-  };
+  const filteredProducts =
+    selectedCategory === "all"
+      ? products
+      : products.filter(
+          (p) =>
+            p.category === selectedCategory
+        );
 
   return (
+
     <>
-      <Navbar/>
+
+      <Navbar />
 
       <div className="products-page">
-        <div className="products-page-header">
-          <h2 className="section-title">All Products</h2>
 
-          <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-            {/* Search */}
-            <div className="search-bar">
-              <span className="search-icon">⌕</span>
-              <input
-                type="text"
-                placeholder="Search…"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-              />
-            </div>
+        {/* Heading */}
 
-            {/* Sort */}
-            <select
-              className="sort-select"
-              value={sort}
-              onChange={(e) => setSort(e.target.value)}
-            >
-              {SORTS.map((s) => (
-                <option key={s.value} value={s.value}>{s.label}</option>
-              ))}
-            </select>
-          </div>
+        <div className="products-header">
+
+          <h1>All Products</h1>
+
+          <p>
+            Explore premium gadgets and
+            electronics
+          </p>
+
         </div>
 
-        {/* Category pills */}
-        <div className="cat-pills">
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              className={`cat-pill${activeCat === cat ? " active" : ""}`}
-              onClick={() => selectCat(cat)}
-            >
-              {cat.charAt(0).toUpperCase() + cat.slice(1)}
-            </button>
+        {/* Category Filters */}
+
+        <div className="category-filters">
+
+          <button
+            onClick={() =>
+              setSelectedCategory("all")
+            }
+            className={
+              selectedCategory === "all"
+                ? "active"
+                : ""
+            }
+          >
+            All
+          </button>
+
+          <button
+            onClick={() =>
+              setSelectedCategory("phones")
+            }
+            className={
+              selectedCategory === "phones"
+                ? "active"
+                : ""
+            }
+          >
+            Phones
+          </button>
+
+          <button
+            onClick={() =>
+              setSelectedCategory("audio")
+            }
+            className={
+              selectedCategory === "audio"
+                ? "active"
+                : ""
+            }
+          >
+            Audio
+          </button>
+
+          <button
+            onClick={() =>
+              setSelectedCategory("laptops")
+            }
+            className={
+              selectedCategory === "laptops"
+                ? "active"
+                : ""
+            }
+          >
+            Laptops
+          </button>
+
+        </div>
+
+        {/* Products Grid */}
+
+        <div className="products-grid">
+
+          {filteredProducts.map((p) => (
+
+            <ProductCard
+              key={p.id}
+              product={p}
+            />
+
           ))}
+
         </div>
 
-        {/* Results count */}
-        <p style={{ fontSize: 12, color: "#505070", marginBottom: 16 }}>
-          {filtered.length} product{filtered.length !== 1 ? "s" : ""}
-        </p>
-
-        {filtered.length === 0 ? (
-          <div style={{ color: "#505070", padding: "40px 0", textAlign: "center" }}>
-            No products found.
-          </div>
-        ) : (
-          <div className="products-grid">
-            {filtered.map((p) => (
-              <ProductCard key={p.id} product={p} addToCart={addToCart} />
-            ))}
-          </div>
-        )}
       </div>
 
       <Footer />
+
     </>
+
   );
 }
 
