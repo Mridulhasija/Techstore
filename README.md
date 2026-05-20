@@ -1,88 +1,93 @@
-# TechStore — Full Stack Ecommerce Web Application
-<div align="center">
-![TechStore Banner](https://img.shields.io/badge/FullStack-Ecommerce-blueviolet?
-style=for-the-badge)
-![React](https://img.shields.io/badge/React-19-blue?style=for-thebadge&logo=react)
-![Node.js](https://img.shields.io/badge/Node.js-Backend-green?style=for-thebadge&logo=node.js)
-![Express](https://img.shields.io/badge/Express.js-API-black?style=for-thebadge&logo=express)
-![Vite](https://img.shields.io/badge/Vite-Frontend-purple?style=for-thebadge&logo=vite)
-### Modern Full Stack Ecommerce Platform Built With React, Node.js, Express &
-MYSQL
-</div>
+# 🛒 TechStore – Full Stack MERN E-Commerce Platform
+An advanced and responsive **Full Stack E-Commerce Web
+Application** built using the **MERN Stack** with authentication, cart
+management, product listings, protected routes, modern UI design, and live
+deployment.
+Designed and developed with focus on:
+- Real-world full stack architecture
+- Clean UI/UX
+- Authentication & API integration
+- Responsive design
+- Recruiter-friendly project structure
 ---
-# Live Deployment
-## Frontend Live
-https://techstore-f.onrender.com/
-## Backend API Live
-(Add your backend Render deployment link here)
+# 🚀 Live Demo
+### 🌐 Frontend Deployment
+  👉 https://techstore-f.onrender.com
+### ⚙ Backend Deployment
+  👉 https://techstore-trv3.onrender.com
 ---
-# Project Screenshots
-## Homepage
-<img width="100%" alt="Homepage" src="./screenshots/homepage.png" />
----
-## Products Page
-<img width="100%" alt="Products" src="./screenshots/products.png" />
----
-## Cart Page
-<img width="100%" alt="Cart" src="./screenshots/cart.png" />
----
-## Mobile Responsive UI
-<img width="100%" alt="Responsive" src="./screenshots/mobile.png" />
----
-# Features
-## Frontend Features
-- Modern Responsive UI
-- Emoji-Based Product Cards
-- Dynamic Cart Functionality
-- Product Detail Pages
-- Similar Product Recommendations
-- Responsive Navbar
-- Toast Notifications
-- Mobile Friendly Design
-- Professional Ecommerce Layout
-- Dynamic Routing
-- Context API State Management
-- Dark Themed Premium UI
----
-## Backend Features
-- REST API Architecture
-- Authentication System
-- MYSQL Integration
-- Express Middleware
-- JWT Authentication
-- Secure API Endpoints
-- Error Handling
-- API Routing
----
-# Tech Stack
-| Frontend | Backend | Database | Deployment |
-|----------|----------|-----------|-------------|
-| React.js | Node.js | MySQL | Render |
-| Vite | Express.js | Mongoose | GitHub |
-| CSS3 | REST API | MYSQL Workbench 8.0 CE | Render |
-| React Router | JWT | | |
----
-# 🏗️ Project Architecture
+#  📸 Project Screenshots
 
-## Frontend (React + Vite)
+Techstore-main/
+│── screenshots/
+│ ├── home.png
+│ ├── products.png
+│ ├── cart.png
+│ ├── login.png
+│ └── mobile-view.png
 
-The frontend is built using React.js with Vite for high performance and optimized builds.  
-It includes reusable components, dynamic routing, responsive ecommerce UI, Context API state management, toast notifications, and mobile-first design.
+🏠 Home Page
 
-## Backend (Node.js + Express)
+🛍️ Products Page  
 
-The backend follows REST API architecture using Express.js.  
-It handles authentication, cart management, product APIs, middleware security, and MongoDB database integration.
+🛒 Cart Page
 
-## Database
+🔐 Authentication
 
-The project integrates MYSQL for scalable data storage and also includes SQL structure reference through `database.sql`.
+📱 Responsive Mobile View
 
-## Deployment
+✨ Features
+• Authentication System
+• User Registration
+• User Login
+• JWT Authentication
+• Protected Routes
+• Authentication Context API
 
-- Frontend deployed on Render
-- Backend deployed on Render
-- Production-ready MERN stack structure
+🛒 E-Commerce Functionalities
+• Dynamic Product Listing
+• Product Detail Pages
+• Shopping Cart
+• Add/Remove Cart Items
+• Deals Section
+• Category Browsing
+
+🎨 Frontend Features
+• Fully Responsive Design
+• Modern UI/UX
+• Reusable Components
+• Toast Notifications
+• Clean Navigation System
+• Optimized Layout Structure
+
+⚙ Backend Features
+• REST API Architecture
+• Express.js Routing
+• MySQL Database Integration
+• Authentication Middleware
+• MVC Folder Structure
+
+🧠 Tech Stack
+
+Frontend
+• React.js
+• Vite
+• React Router DOM
+• Context API
+• CSS3
+
+Backend
+• Node.js
+• Express.js
+• JWT Authentication
+• bcrypt.js
+
+Database
+• MySQL
+• Deployment
+• Render
+• Railway
+
 ---
 # 📂 Folder Structure
 
@@ -135,3 +140,71 @@ Techstore-main/
 ├── database.sql
 └── README.md
 ```
+🔑 Environment Variables
+
+Frontend .env
+VITE_API_URL=https://techstore-trv3.onrender.com
+
+Backend .env
+DB_HOST=mysql-production-7961.up.railway.app
+DB_USER=root
+DB_PASSWORD=wGYDZOkvQzDMyPbaQlDHLlomxzsbJLDA
+DB_NAME=railway
+DB_PORT=3306
+JWT_SECRET=05cc5e7ae1c55c8561c6da0d8e4027d4
+PORT=5000
+RENDER_EXTERNAL_URL=https://techstore-trv3.onrender.com
+
+⚡ Installation & Setup
+ 1️⃣ Clone Repository
+git clone https://github.com/Mridulhasija/your-repo-name.git
+ 2️⃣ Install Frontend Dependencies
+cd client
+npm install
+3️⃣ Install Backend Dependencies
+cd ../Server
+npm install
+4️⃣ Setup Database
+database.sql
+⏯️ Running The Project
+Start Backend
+cd Server
+npm run dev
+Start Frontend
+cd client
+npm run dev
+
+📌 API Endpoints
+
+Authentication
+• POST /api/auth/register
+• POST /api/auth/login
+
+Products
+• GET /api/products
+• GET /api/products/:id
+
+Cart
+• GET /api/cart
+• POST /api/cart/add
+• DELETE /api/cart/remove/:id
+
+💡What I Learned
+ • Through this project, I gained hands-on experience in:
+ • Full Stack MERN Development
+ • REST API Design
+ • Authentication using JWT
+ • MySQL Database Integration
+ • React Context API
+ • Responsive UI Development
+ • Deployment & Environment Configuration
+ • Clean Component-Based Architecture
+
+🎯 Future Improvements
+ • Payment Gateway Integration
+ • Order Tracking System
+ • Admin Dashboard
+ • Product Search & Filters
+ • Wishlist Feature
+ • Razorpay/Stripe Integration
+ • Dark Mode
