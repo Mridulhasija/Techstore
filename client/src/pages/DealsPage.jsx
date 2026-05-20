@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Navbar        from "../components/Navbar";
 import Footer        from "../components/Footer";
 import ProductCard   from "../components/ProductCard";
@@ -29,7 +30,6 @@ function DealsPage({ cartCount, addToCart, onAuthClick }) {
       <Navbar cartCount={cartCount} onAuthClick={onAuthClick} />
 
       <div className="products-page">
-        {}
         <div className="promo-banner" style={{ margin: "0 0 40px" }}>
           <div className="promo-text">
             <h2>Flash Sale — Up to 40% Off</h2>
