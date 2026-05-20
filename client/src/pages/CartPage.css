@@ -183,3 +183,17 @@ border-radius: 20px;
 font-size: 120px;
 margin-bottom: 20px;
 }
+@media(max-width:768px){
+.cart-page {
+padding: 20px;
+}
+.cart-item {
+flex-direction: column;
+}
+.cart-image-container {
+width: 100%;
+}
+.cart-summary {
+position: static;
+}
+}
