@@ -1,67 +1,50 @@
-import { useState }              from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ToastProvider }         from "./hooks/useToast";
-import { AuthProvider }          from "./context/AuthContext";
-import Home                      from "./pages/Home";
-import ProductsPage              from "./pages/ProductsPage";
-import DealsPage                 from "./pages/DealsPage";
-import ProductDetail             from "./pages/ProductDetail";
-import AuthModal                 from "./components/AuthModal";
-import CartPage                  from "./pages/CartPage";
-import ProductDetailsPage        from "./pages/ProductDetailsPage";
+import { Routes, Route } from "react-router-dom";
 
-function AppInner() {
-  return (
-    <>
-      {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
-
-      <Routes>
-        <Route path="/" element={
-          <Home
-            cartCount={cartCount}
-            setCartCount={setCartCount}
-            onAuthClick={() => setShowAuth(true)}
-          />
-        } />
-
-        <Route path="/products" element={
-          <ProductsPage
-            cartCount={cartCount}
-            addToCart={addToCart}
-            onAuthClick={() => setShowAuth(true)}
-          />
-        } />
-
-        <Route path="/deals" element={
-          <DealsPage
-            cartCount={cartCount}
-            addToCart={addToCart}
-            onAuthClick={() => setShowAuth(true)}
-          />
-        } />
-
-        <Route path="/product/:id" element={
-          <ProductDetail addToCartLocal={addToCart} />
-        } />
-        <Route path="/cart" element={<CartPage />} />
-<Route
-  path="/products/:id"
-  element={<ProductDetailsPage />}
-/>
-      </Routes>
-    </>
-  );
-}
+import Home from "./pages/Home";
+import ProductsPage from "./pages/ProductsPage";
+import DealsPage from "./pages/DealsPage";
+import ProductDetail from "./pages/ProductDetail";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
+import CartPage from "./pages/CartPage";
 
 function App() {
+
   return (
-    <BrowserRouter>
-      <AuthProvider>
-        <ToastProvider>
-          <AppInner />
-        </ToastProvider>
-      </AuthProvider>
-    </BrowserRouter>
+
+    <Routes>
+
+      <Route
+        path="/"
+        element={<Home />}
+      />
+
+      <Route
+        path="/products"
+        element={<ProductsPage />}
+      />
+
+      <Route
+        path="/deals"
+        element={<DealsPage />}
+      />
+
+      <Route
+        path="/product/:id"
+        element={<ProductDetail />}
+      />
+
+      <Route
+        path="/products/:id"
+        element={<ProductDetailsPage />}
+      />
+
+      <Route
+        path="/cart"
+        element={<CartPage />}
+      />
+
+    </Routes>
+
   );
 }
 
