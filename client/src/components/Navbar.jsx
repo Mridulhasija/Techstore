@@ -4,7 +4,13 @@ import AuthModal from "./AuthModal";
 import Login from "./Login";
 import Register from "./Register";
 import "./Navbar.css";
-const Navbar = ({ cartCount = 0 }) => {
+import { useCart } from "../context/CartContext";
+const Navbar = () => {
+const { cartItems } = useCart();
+const cartCount = cartItems.reduce(
+(total, item) => total + item.quantity,
+0
+);
 const [showLogin, setShowLogin] = useState(false);
 const [showRegister, setShowRegister] = useState(false);
 const navigate = useNavigate();
