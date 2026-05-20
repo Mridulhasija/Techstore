@@ -118,3 +118,17 @@ height: 100%;
 background: linear-gradient(135deg,#0f172a,#1e293b);
 border-radius: 20px;
 }
+@media(max-width:768px){
+.product-image-container {
+height: 200px;
+}
+.product-emoji {
+font-size: 70px;
+}
+.product-title {
+font-size: 16px;
+}
+.product-buttons {
+flex-direction: column;
+}
+}
