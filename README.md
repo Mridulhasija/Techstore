@@ -1,210 +1,270 @@
-# 🛒 TechStore – Full Stack MERN E-Commerce Platform
-An advanced and responsive **Full Stack E-Commerce Web
-Application** built using the **MERN Stack** with authentication, cart
-management, product listings, protected routes, modern UI design, and live
-deployment.
-Designed and developed with focus on:
-- Real-world full stack architecture
-- Clean UI/UX
-- Authentication & API integration
-- Responsive design
-- Recruiter-friendly project structure
----
-# 🚀 Live Demo
-### 🌐 Frontend Deployment
-  👉 https://techstore-f.onrender.com
-### ⚙ Backend Deployment
-  👉 https://techstore-trv3.onrender.com
----
-#  📸 Project Screenshots
+<div align="center">
 
-Techstore-main/
-│── screenshots/
-│ ├── home.png
-│ ├── products.png
-│ ├── cart.png
-│ ├── login.png
-│ └── mobile-view.png
+# 🛒 TechStore
 
-🏠 Home Page
+### Modern Full Stack MERN E-Commerce Platform
 
-🛍️ Products Page  
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00BFFF&center=true&vCenter=true&width=700&lines=Full+Stack+MERN+E-Commerce+Platform;JWT+Authentication+%7C+MySQL+%7C+Responsive+UI;React+%2B+Node.js+%2B+Express+%2B+Vite;Built+for+Real-World+Production+Experience" />
 
-🛒 Cart Page
+<br/>
 
-🔐 Authentication
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react)
+![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js)
+![Express](https://img.shields.io/badge/Express-black?style=for-the-badge&logo=express)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=jsonwebtokens)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite)
 
-📱 Responsive Mobile View
+<br/>
 
-✨ Features
-• Authentication System
-• User Registration
-• User Login
-• JWT Authentication
-• Protected Routes
-• Authentication Context API
+[🌐 Live Frontend](https://techstore-f.onrender.com)
+•
+[⚙ Backend API](https://techstore-trv3.onrender.com)
 
-🛒 E-Commerce Functionalities
-• Dynamic Product Listing
-• Product Detail Pages
-• Shopping Cart
-• Add/Remove Cart Items
-• Deals Section
-• Category Browsing
-
-🎨 Frontend Features
-• Fully Responsive Design
-• Modern UI/UX
-• Reusable Components
-• Toast Notifications
-• Clean Navigation System
-• Optimized Layout Structure
-
-⚙ Backend Features
-• REST API Architecture
-• Express.js Routing
-• MySQL Database Integration
-• Authentication Middleware
-• MVC Folder Structure
-
-🧠 Tech Stack
-
-Frontend
-• React.js
-• Vite
-• React Router DOM
-• Context API
-• CSS3
-
-Backend
-• Node.js
-• Express.js
-• JWT Authentication
-• bcrypt.js
-
-Database
-• MySQL
-• Deployment
-• Render
-• Railway
+</div>
 
 ---
-# 📂 Folder Structure
+
+# 📌 About The Project
+
+TechStore is a modern and scalable full stack e-commerce platform developed using the MERN ecosystem.  
+The application focuses on real-world production architecture, authentication workflows, responsive design, and smooth user experience.
+
+It demonstrates:
+- Full Stack Development
+- Authentication & Authorization
+- REST API Architecture
+- Database Management
+- Modern Responsive UI
+- Deployment & Production Configuration
+
+---
+
+# ✨ Key Features
+
+<table>
+<tr>
+<td width="50%">
+
+## 🔐 Authentication
+- JWT Authentication
+- Protected Routes
+- Login/Register
+- Context API Auth State
+
+</td>
+
+<td width="50%">
+
+## 🛒 E-Commerce
+- Product Listings
+- Dynamic Cart
+- Deals Section
+- Product Pages
+
+</td>
+</tr>
+
+<tr>
+<td width="50%">
+
+## 🎨 Frontend
+- Responsive UI
+- Reusable Components
+- Modern Navigation
+- Toast Notifications
+
+</td>
+
+<td width="50%">
+
+## ⚙ Backend
+- Express REST APIs
+- Middleware System
+- MVC Architecture
+- MySQL Integration
+
+</td>
+</tr>
+</table>
+
+---
+
+# 🖼️ Project Preview
+
+## 🏠 Homepage
+![Home](./screenshots/home.png)
+
+---
+
+## 🛍️ Product Page
+![Products](./screenshots/products.png)
+
+---
+
+## 🛒 Shopping Cart
+![Cart](./screenshots/cart.png)
+
+---
+
+## 📱 Mobile Responsive Design
+![Mobile](./screenshots/mobile-view.png)
+
+---
+
+# 🧠 Tech Stack
+
+## Frontend
+```bash
+React.js
+Vite
+React Router DOM
+Context API
+CSS3
+```
+
+## Backend
+```bash
+Node.js
+Express.js
+JWT Authentication
+bcrypt.js
+```
+
+## Database
+```bash
+MySQL
+```
+
+## Deployment
+```bash
+Render
+Railway
+```
+
+---
+
+# 📂 Project Architecture
 
 ```bash
 Techstore-main/
 │
 ├── client/
-│   │
-│   ├── src/
-│   │   │
-│   │   ├── api/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── data/
-│   │   ├── hooks/
-│   │   ├── pages/
-│   │   │
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
-│   │
-│   ├── .env
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.js
+│   ├── components/
+│   ├── pages/
+│   ├── context/
+│   ├── hooks/
+│   ├── api/
+│   └── data/
 │
 ├── Server/
-│   │
 │   ├── Controllers/
-│   │   ├── authController.js
-│   │   ├── cartController.js
-│   │   └── productController.js
-│   │
-│   ├── config/
-│   │   └── db.js
-│   │
-│   ├── middleware/
-│   │   └── authMiddleware.js
-│   │
 │   ├── routes/
-│   │   ├── authRoutes.js
-│   │   ├── cartRoutes.js
-│   │   └── productRoutes.js
-│   │
-│   ├── .env
-│   ├── Server.js
-│   ├── package.json
-│   └── package-lock.json
+│   ├── middleware/
+│   ├── config/
+│   └── Server.js
 │
-├── database.sql
-└── README.md
+└── database.sql
 ```
-🔑 Environment Variables
 
-Frontend .env
-VITE_API_URL=https://techstore-trv3.onrender.com
+---
 
-Backend .env
-DB_HOST=mysql-production-7961.up.railway.app
-DB_USER=root
-DB_PASSWORD=wGYDZOkvQzDMyPbaQlDHLlomxzsbJLDA
-DB_NAME=railway
-DB_PORT=3306
-JWT_SECRET=05cc5e7ae1c55c8561c6da0d8e4027d4
-PORT=5000
-RENDER_EXTERNAL_URL=https://techstore-trv3.onrender.com
+# ⚡ Installation
 
-⚡ Installation & Setup
- 1️⃣ Clone Repository
-git clone https://github.com/Mridulhasija/your-repo-name.git
- 2️⃣ Install Frontend Dependencies
+## Clone Repository
+
+```bash
+git clone https://github.com/Mridulhasija/TechStore.git
+```
+
+## Install Frontend
+
+```bash
 cd client
 npm install
-3️⃣ Install Backend Dependencies
+```
+
+## Install Backend
+
+```bash
 cd ../Server
 npm install
-4️⃣ Setup Database
-database.sql
-⏯️ Running The Project
-Start Backend
-cd Server
+```
+
+---
+
+# ▶ Run Project
+
+## Start Backend
+
+```bash
 npm run dev
-Start Frontend
-cd client
+```
+
+## Start Frontend
+
+```bash
 npm run dev
+```
 
-📌 API Endpoints
+---
 
-Authentication
-• POST /api/auth/register
-• POST /api/auth/login
+# 📌 API Endpoints
 
-Products
-• GET /api/products
-• GET /api/products/:id
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/auth/register` | Register User |
+| POST | `/api/auth/login` | Login User |
+| GET | `/api/products` | Fetch Products |
+| GET | `/api/products/:id` | Product Details |
+| POST | `/api/cart/add` | Add To Cart |
 
-Cart
-• GET /api/cart
-• POST /api/cart/add
-• DELETE /api/cart/remove/:id
+---
 
-💡What I Learned
- • Through this project, I gained hands-on experience in:
- • Full Stack MERN Development
- • REST API Design
- • Authentication using JWT
- • MySQL Database Integration
- • React Context API
- • Responsive UI Development
- • Deployment & Environment Configuration
- • Clean Component-Based Architecture
+# 💡 Learnings
 
-🎯 Future Improvements
- • Payment Gateway Integration
- • Order Tracking System
- • Admin Dashboard
- • Product Search & Filters
- • Wishlist Feature
- • Razorpay/Stripe Integration
- • Dark Mode
+This project helped me strengthen my understanding of:
+
+- Full Stack Architecture
+- REST APIs
+- JWT Authentication
+- Database Integration
+- React State Management
+- Deployment Pipelines
+- Clean Scalable Code Structure
+
+---
+
+# 🚀 Future Enhancements
+
+- Payment Gateway
+- Admin Dashboard
+- Product Filters
+- Wishlist System
+- Order Tracking
+- Dark Mode
+
+---
+
+# 👨‍💻 Developer
+
+## Mridul Hasija
+
+### Aspiring Full Stack MERN Developer
+
+Passionate about building scalable, responsive, and user-centric web applications.
+
+### Connect With Me
+
+- GitHub: https://github.com/Mridulhasija
+- Linkedin: https://www.linkedin.com/in/mridul-hasija-290996329/
+
+---
+
+<div align="center">
+
+# ⭐ If You Like This Project
+
+Give it a ⭐ on GitHub and support the project.
+
+</div>
