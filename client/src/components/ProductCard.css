@@ -106,4 +106,5 @@ color: #0f172a;
 }
 .view-btn:hover {
 background: #cccccc;
+transform: translateY(-2px);
 }
