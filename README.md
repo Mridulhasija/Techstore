@@ -98,7 +98,7 @@ It demonstrates:
 ---
 
 ## 🛍️ Product Page
-![Products](.screenshots/TechStore-Google Chrome 21-05-2026 12_39_50.png)
+![Products](.screenshots/products.png)
 
 ---
 
