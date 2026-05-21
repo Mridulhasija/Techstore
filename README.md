@@ -103,8 +103,8 @@ It demonstrates:
 ---
 
 ## 🛒 Shopping Cart
-![Cart](./screenshots/cart.png)
 ![Cart](./screenshots/empty_cart.png)
+![Cart](./screenshots/cart.png)
 
 ---
 
