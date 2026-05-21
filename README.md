@@ -110,6 +110,7 @@ It demonstrates:
 
 ## 📱 Mobile Responsive Design
 ![Mobile](./screenshots/mobile-view.png)
+![Mobile](./screenshots/mobile-view_footer.png)
 
 ---
 
