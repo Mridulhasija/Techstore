@@ -98,7 +98,7 @@ It demonstrates:
 ---
 
 ## 🛍️ Product Page
-![Products](.screenshots/products.png)
+![Products](.screenshots/product.png)
 
 ---
 
